@@ -1,6 +1,7 @@
 @charset "utf-8";
 body {
     min-height:500px;
+    position: relative;
 }
 /*header start*/
 #header {
@@ -11,10 +12,15 @@ body {
     border:1px solid #ccc;
     text-align: center;
     position: fixed;
+    left:0;
+    top:0;
     z-index: 10;
 }
 #header .r-link {
+    height:60px;
+    line-height:60px;
     position: absolute;
+    top:0;
     right:100px;
     font-size:14px;
 }
@@ -27,6 +33,7 @@ body {
     line-height: 10em;
     position: relative;
     top: 66px;
+    _top:0px;
     overflow: hidden;
 }
 /*side start*/
@@ -42,10 +49,18 @@ body {
 
 /*right main container start*/
 #right {
-    width: calc(100% - 163px);
+    width: calc(100% - 163px) !important;
+    width: 84%;
     height: 100%;
     background: #fefefe;
     float: right;
     overflow-y: auto;
+
 }
 /*right main container end*/
+/*响应屏幕小时，显示横向滚动条*/
+@media screen and (max-width:630px){
+    .r-link {
+        display: none;
+    }
+}
