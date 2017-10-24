@@ -1,0 +1,18 @@
+{
+  "name": "cloudhua",
+  "version": "0.0.0",
+  "description": "This is a test of cloundhua !",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "package" : "node js/static/r.js -o js/static/build.js"
+  },
+  "repository": "https://github.com/Fx-Dialog",
+  "author": "往事如风AHA",
+  "keywords": [
+    "Dialog",
+    "组件化"
+  ],
+  "license": "BSD",
+  "readmeFilename": "readme.md"
+}

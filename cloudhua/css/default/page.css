@@ -1,0 +1,99 @@
+body {
+    background:rgba(95, 118, 185, 0.09);
+}
+#header {
+    height:60px;
+    line-height:60px;
+    background-color:#f9fff9;
+    box-shadow:0 0 7px rgba(0,0,0,.4);
+}
+#header .title {
+    margin-left: 30px;
+    padding: 0 10px;
+    background: #e1ffde;
+    display: inline-block;
+    border-bottom: 2px solid #508f4a;
+    box-sizing: border-box;
+    cursor: default;
+}
+#header .link {
+    margin-right:50px;
+    font-size:14px;
+    float: right;
+}
+#main {
+    margin:10px auto;
+}
+.xw-btn {
+    display: inline-block;
+    padding:6px 14px;
+    color:#efe;
+    background-color:#4171b0;
+    font-size:14px;
+}
+.section {
+    width:80%;
+    margin:10px auto;
+    padding:10px 14px;
+    border:1px solid #ccc;
+    background-color:#f7f7fe;
+    overflow: hidden;
+}
+.section .title {
+    padding: 6px 10px;
+    color:#333;
+    background: #b2e4c6;
+    font-size: 15px;
+    border-left: 3px solid #5da765;
+}
+.section .sub-title {
+    padding: 0 .6em;
+    display: inline-block;
+    background: rgba(240,192,192,0.80);
+    font-size:14px;
+    border-bottom: 1px solid #cf9845;
+}
+.section .line {
+    padding:5px 4px;
+}
+.section .line .content {
+    line-height:1.5em;
+    text-indent:2em;
+}
+.section pre {
+    color:#111;
+    background-color:#efe;
+}
+.code-blue-bg .sub-title {
+    padding:3px 8px;
+    background-color:rgba(177, 183, 210, 0.8);
+    border:0px none;
+}
+.code-line pre {
+    padding:10px 14px;
+    line-height:1.5em;
+    background-color:#efe;
+    border-bottom:1px solid #577786;
+}
+.code-line .line:last-child pre{
+    border:inherit;
+}
+/**定义弹窗内代码显示样式*/
+.fl-pop pre {
+    line-height: 20px;
+    color: #171515;
+    background: #d9f0cf;
+    border-left: 2px solid #33a118;
+    padding: 10px 4px;
+}
+/*override global for test*/
+.fl-pop .section {
+    width:auto;
+}
+
+/*响应屏幕小时，显示横向滚动条*/
+@media screen and (max-width:730px){
+    .section pre {
+        overflow-x:scroll;
+    }
+}

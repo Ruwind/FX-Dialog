@@ -1,0 +1,232 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Dialog组件测试 - 程文峰</title>
+    <link rel="stylesheet" type="text/css" href="./css/common/wind/base.css"/>
+    <link rel="stylesheet" type="text/css" href="./css/default/page.css"/>
+    <script type="text/javascript" src="./js/static/require.js" data-main="./js/build/app"></script>
+</head>
+<body>
+<div id="header">
+    <div class="title">Dialog组件</div>
+    <div class="link">
+        <a href="./index.html" class="r-link">CSS页面测试页</a>
+    </div>
+</div>
+<div id="main">
+    <!--基本功能展示-->
+    <div class="section func-test">
+        <a href="#" name="func"></a>
+        <p class="title">功能测试</p>
+        <div class="line">
+            <a href="javascript:void(0)" class="xw-btn" id="showDialog-default">显示默认Dialog</a>
+        </div>
+        <div class="line">
+            <a href="javascript:void(0)" class="xw-btn"  id="showDialog-skin">显示绿色Dialog</a>
+        </div>
+        <div class="line">
+            <a href="javascript:void(0)" class="xw-btn"  id="showDialog-animate">带有过渡Dialog</a>
+        </div>
+        <div class="line">
+            <a href="javascript:void(0);" class="xw-btn"  id="showDialog-no-footer">没有footer的弹窗</a>
+        </div>
+        <div class="line">
+            <a href="javascript:void(0);" class="xw-btn" id="showDialog-from-dom">从dom中创建的弹窗</a>
+        </div>
+        <div class="line">
+            <a href="javascript:void(0);" class="xw-btn" id="showDialog-custom-anim">自定义过渡效果</a>
+        </div>
+        <div class="line">
+            <a href="javascript:void(0);" class="xw-btn" id="showDialog-just-body">全内容结构</a>
+        </div>
+        <div class="line">
+        </div>
+    </div>
+    <!--实例创建-->
+    <div class="section for-use code-line">
+        <a href="#" name="using"></a>
+        <p class="title">使用: <a href="#options"> options配置说明</a> </p>
+        <div class="line">
+            <p class="sub-title">直接new</p>
+            <pre>
+    var Dialog = new $.Dialog(options);
+    Dialog.show();
+            </pre>
+        </div>
+        <div class="line">
+            <p class="sub-title">使用静态方法</p>
+            <pre>
+    $.Dialog.show(options, callback)
+    //该操作会返回一个Dialog对象
+    $.Dialog.once(options, callback)
+    //该操作会返回Dilog, 其显示的弹窗关闭后立销毁
+    $.Dialog.create(options) 需要配置wrapper
+    //可快速从dom中提取主本内容
+            </pre>
+        </div>
+        <div class="line">
+            <p class="sub-title">使用RequreJs</p>
+            <pre>
+    require(['Dialog'],function(Dialog){
+
+        var dialog = new Dialog().show();
+
+    });
+            </pre>
+        </div>
+        <div class="line">
+            <p class="sub-title">销毁</p>
+            <pre>
+    dialog.destroy();
+            </pre>
+        </div>
+    </div>
+    <!--参数配置-->
+    <div class=" section param-intro">
+        <a href="#" name="options"></a>
+        <p class="title">配置参数说明</p>
+        <pre>
+
+{
+    width : 500,      //定义弹窗宽度
+    height: 400,      //定义弹窗高度
+    sizeAuto : false, //是否尺寸自适应
+    skin : "",        //设置弹窗样式
+    container:$(document.body), //容器
+    body : null,       //是否从dom直接设置body
+    title :"提示",      //弹窗标题
+    scroll : false,    //是否设置内容超出显示滚动条
+    windowScroll : true, //是否在弹窗显示后允许页面滚动
+    close : "关闭",     //关闭按钮内容
+    content : "",      //内容
+    closeBtnWidth :50, //关闭按钮宽度
+    bodyPadding : 10,  //主体部分内边距，也可直接用样式控制
+    distance : 0,      //底部一上弹性距离
+    fixed : true,      //是否固定于屏幕中央
+    offsetY : 0,       //垂直向偏移距离
+    animate : true,    //是否使用过渡 | 自定义fn(height, endTop)
+    display : {        //设置渲染的部分
+        header : true,
+        footer : true,
+        ok : {
+            show : true,
+            text : "OK" //确认按钮文本
+        },
+        cancel : {
+            show : true,
+            text : "Cancel" //取消按钮文本
+        }
+    }
+}
+        </pre>
+    </div>
+    <!--事件说明-->
+    <div class="section event  code-line">
+        <p class="title">事件</p>
+        <div class="line  code-blue-bg">
+            <p class="sub-title event">render</p>
+            <p class="sub-title event">build</p>
+            <p class="sub-title event">beforeShow</p>
+            <p class="sub-title event">show</p>
+            <p class="sub-title event">ok</p>
+            <p class="sub-title event">cancel</p>
+            <p class="sub-title event">beforeClose</p>
+            <p class="sub-title event">closed</p>
+            <p class="sub-title event">reBuild</p>
+        </div>
+        <div class="line">
+            <p class="sub-title event">绑定</p>
+            <pre>
+    dialog.onType = function() {}
+    dialog.bind(type,function(){}).bind(type2,func...)
+    dilog.bind({type:function(){}, type2:func...)
+            </pre>
+        </div>
+        <div class="line">
+            <p class="sub-title event">解绑</p>
+            <pre>
+    dialog.unbind(string|array)
+    dialog.unbind(type1).unbind(type2)
+    dialog.unbind([type1,type2)
+    dialog.unbind(type1,type2)
+            </pre>
+        </div>
+        <div class="line">
+            <p class="sub-title event">说明</p>
+            <pre>
+    onBeforeClose事件
+    //在为之设置处理函数时，若返回false,则该弹窗将不执行默认关闭操作
+            </pre>
+        </div>
+    </div>
+    <!--重要方法-->
+    <div class="section method">
+        <p class="title">重要方法</p>
+        <div class="line">
+            <p class="sub-title">show</p>
+            <pre>
+    show(content,callback,data)
+    /**
+     * content为假时，内容将使用上次内容,content 可为一上函数返回一个字符串
+     * callback 显示后的回调，在事件show后发生
+     * data 传入callback的数据
+    **/
+            </pre>
+        </div>
+        <div class="line">
+            <p class="sub-title">show</p>
+            <pre>
+    close()
+    //在只有body的弹窗中，需要绑定操作来执行该方法来关闭弹窗
+            </pre>
+        </div>
+    </div>
+    <!--页面应用-->
+    <div class="section for-page">
+        <a href="#" name="forpage"></a>
+        <p class="title">页面应用</p>
+        <div class="line">
+            <p class="sub-title">打包</p>
+            <p class="content">
+                 该Dialog依赖 fx-dialog.css文件
+            </p>
+        </div>
+        <div class="line">
+
+        </div>
+    </div>
+</div>
+
+<div  id="popup"  class="pop-content fx-dh">
+    //这是直接从dom中建立的弹窗
+    <div class="section for-use code-line">
+        <a href="#" name="using"></a>
+        <p class="title">使用: <a href="#options"> options配置说明</a> </p>
+        <div class="line">
+            <p class="sub-title">直接new</p>
+            <pre>
+    var Dialog = new $.Dialog(options);
+    Dialog.show();
+            </pre>
+        </div>
+        <div class="line">
+            <p class="sub-title">使用静态方法</p>
+            <pre>
+    $.Dialog.show(options, callback)
+    //该操作会返回一个Dialog对象
+    $.Dialog.once(options, callback)
+    //该操作会返回Dilog, 其显示的弹窗关闭后立销毁
+    $.Dialog.create(options) 需要配置wrapper
+    //可快速从dom中提取主本内容
+            </pre>
+        </div>
+    </div>
+</div>
+
+
+</body>
+</html>

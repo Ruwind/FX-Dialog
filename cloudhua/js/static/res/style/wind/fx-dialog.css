@@ -1,0 +1,145 @@
+/*popup - start*/
+.fx-db {
+    display: block;
+}
+.fx-dh {
+    display: none;
+}
+.fl-pop {
+    width: 490px;
+    margin: 0 auto;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    font-size: 15px;
+    border-radius: 0 0 6px 6px;
+    box-shadow: 0 0 2px #807979;
+    cursor: default;
+    position: relative;
+    z-index: 9999;
+}
+.fl-pop a {
+    text-decoration: none;
+}
+.fl-pop:hover {
+    text-decoration: none;
+}
+.fx-pop-mask {
+    width:100%;
+    height: 100%;
+    position: fixed;
+    top:0;
+    left: 0;
+    background: rgba(0,0,0,0.1);
+    z-index: 9990;
+}
+.fl-pop.f-confirm {
+    /*height:220px;*/
+    /*border:1px solid #0055cc;*/
+    position: relative;
+}
+.f-confirm .pop-header {
+    width:100%;
+    height:36px;
+    line-height:36px;
+    background-color:rgb(100, 127, 149);
+    color:#fbfbfb;
+    text-indent:16px;
+    -webkit-border-radius:3px 3px 0 0;
+    -moz-border-radius:3px 3px 0 0;
+    border-radius:3px 3px 0 0;
+}
+.f-confirm .pop-close-btn {
+    float: right;
+    margin-right:20px;
+    cursor: pointer;
+}
+.f-confirm .pop-content {
+    /*width:94%;*/
+    padding:10px;
+    background-color:#ebecf0;
+    margin:0 auto;
+    /*height: calc(100% - 36px - 44px);*/
+}
+.f-confirm.no-title .pop-content {
+    /*height:calc(100% - 60px);*/
+}
+.f-confirm.no-button .pop-content {
+    /*height:calc( 100% - 36px );*/
+}
+.f-confirm.no-title_button .pop-content {
+    /*height:calc( 100% );*/
+}
+.f-confirm .pop-action {
+    height: 44px;
+    /*position: absolute;*/
+    /*bottom: 10px;*/
+    /*left: 30%;*/
+    background-color:#ebecf0;
+    text-align: center;
+}
+.f-confirm .pop-action .pop-btn {
+    display: inline-block;
+    width: 80px;
+    height: 30px;
+    line-height: 30px;
+    margin: 5px 12px;
+    text-align: center;
+    border-radius: 3px;
+    color: #789ac8;
+    border: 1px solid;/* #a2a5aa*/
+}
+.f-confirm .pop-action .pop-ok-btn {
+    background-color: #829ccb;
+    color:#ececec;
+    border-color: #859cc5;
+}
+.f-confirm .pop-action .pop-cancel-btn:hover {
+    background-color: #e2eaf6;
+}
+/**透明标题**/
+.fl-pop.pop-op-title .pop-header {
+    background-color: rgba(53, 69, 137, 0.23);
+}
+/*透明标题*/
+/**透明样式**/
+.fl-pop.pop-op .pop-header {
+    background-color: rgba(53, 69, 137, 0.23);
+}
+.fl-pop.pop-op .pop-content {
+    background-color: #ebecf033;
+}
+.fl-pop.pop-op .pop-action {
+    background-color: #ebecf01a;
+}
+
+/**定制为红色样式*/
+.fl-pop.pop-red .pop-header {
+    background: rgb(167, 106, 106);
+}
+.fl-pop.pop-red .pop-action .pop-btn {
+    color:#876756;
+}
+.fl-pop.pop-red .pop-action .pop-ok-btn{
+    border-color:#c59085;
+    background-color: #cb8282;
+    color:#ececec;
+}
+.fl-pop.pop-red .pop-action .pop-cancel-btn:hover {
+    background-color: rgba(95, 118, 185, 0.09);
+}
+/**定制为绿色*/
+.fl-pop.pop-green .pop-header {
+    background: rgb(40, 183, 102);
+}
+.fl-pop.pop-green .pop-action .pop-btn {
+    color:#71bc87;
+}
+.fl-pop.pop-green .pop-action .pop-ok-btn {
+    background-color: rgb(40, 183, 102);
+    color:#ececec;
+}
+.fl-pop.pop-green .pop-action .pop-cancel-btn:hover {
+    background-color:#d2f8d5;
+}
+/*popup - end*/
