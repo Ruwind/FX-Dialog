@@ -186,19 +186,32 @@
         </div>
     </div>
     <!--页面应用-->
-    <div class="section for-page">
-        <a href="#" name="forpage"></a>
-        <p class="title">页面应用</p>
-        <div class="line">
-            <p class="sub-title">打包</p>
-            <p class="content">
-                 该Dialog依赖 fx-dialog.css文件
-            </p>
-        </div>
-        <div class="line">
+        <div class="section for-page">
+            <a href="#" name="forpage"></a>
+            <p class="title">页面应用</p>
+            <div class="line">
+                <p class="sub-title">打包</p>
+                <pre>
+    该Dialog依赖 fx-dialog.css文件 jQuery
+    使用node r.js -o build.js 进行打包生成单个app.js文件
+    或配置package.json 使用npm run package
+                </pre>
+                <p class="sub-title">打包配置文件./js/static/build.js</p>
+                <pre>
 
-        </div>
-    </div>
+    ({
+        baseUrl : "../app",
+        mainConfigFile : "../require.config.js",
+        out : '../build/app.js',
+        name: '../index',
+        //optimize:'none'
+    })
+
+                </pre>
+            </div>
+            <div class="line">
+
+            </div>
 </div>
 
 <div  id="popup"  class="pop-content fx-dh">
