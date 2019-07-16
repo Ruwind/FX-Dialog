@@ -10,7 +10,7 @@ Dialog 是一个基于jQuery的对话框组件，简单易用
  > Dialog是基于jQuery的对话框组件,使用RequireJS可直接引用 
  > 若使用<script>手动引入时，需要手动载入jquery.js 和 fx-dialog.css文件 
 
-
+```
 cloudhua  				     -测试目录
 ├─css           		    样式文件
 │  ├─common             公共样式目录
@@ -51,5 +51,5 @@ cloudhua  				     -测试目录
 ├─dialog.html           测试题 2 Dialog组件入口 html入口文件
 ├─package.json          包描述文件
 └─README.md             README文件
-
+```
 > dialog详细介绍与使用在dialog.html中
